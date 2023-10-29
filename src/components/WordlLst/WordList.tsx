@@ -1,12 +1,16 @@
 import React from 'react';
 
-const WordList: React.FC<{ words: string[] }> = ({ words }) => {
+const WordList: React.FC<{ words: { word: string, reason: string }[] }> = ({ words }) => {
   return (
     <div className="word-list">
       <h2>Word List</h2>
       <ul>
-        {words.map((word, index) => (
-          <li key={index}>{word}</li>
+        {words.map((entry, index) => (
+          <li key={index}>
+            <strong>Word:</strong> {entry.word}
+            <br />
+            <strong>Reason:</strong> {entry.reason}
+          </li>
         ))}
       </ul>
     </div>

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
-const AddWord: React.FC<{ onAddWord: (word: string) => void }> = ({ onAddWord }) => {
+const AddWord: React.FC<{ onAddWord: (word: string, reason: string) => void }> = ({ onAddWord }) => {
   const [newWord, setNewWord] = useState<string>('');
   const [newWordReason, setNewWordReason] = useState<string>('');
 
   const handleAddWord = () => {
     if (newWord) {
-      onAddWord(newWord);
+      onAddWord(newWord, newWordReason);
       setNewWord('');
+      setNewWordReason('');
     }
   };
 
@@ -26,10 +27,7 @@ const AddWord: React.FC<{ onAddWord: (word: string) => void }> = ({ onAddWord })
         value={newWordReason}
         onChange={(e) => setNewWordReason(e.target.value)}
       />
-      <button
-      onClick={handleAddWord}>add
-
-      </button>
+      <button onClick={handleAddWord}>Add</button>
     </div>
   );
 };

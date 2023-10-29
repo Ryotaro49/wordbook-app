@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import './App.css';
-import AddWord from './components/AddWord/AddWord';
 import WordList from './components/WordlLst/WordList';
+import AddWord from './components/AddWord/AddWord';
 
 function App() {
-  const [words, setWords] = useState<string[]>([]);
+  const [wordEntries, setWordEntries] = useState<{ word: string, reason: string }[]>([]);
 
-  const handleAddWord = (newWord: string) => {
-    setWords([...words, newWord]);
+  const handleAddWord = (newWord: string, newReason: string) => {
+    const newEntry = { word: newWord, reason: newReason };
+    setWordEntries([...wordEntries, newEntry]);
   };
 
   return (
     <div className="App">
       <AddWord onAddWord={handleAddWord} />
-      <WordList words={words} />
+      <WordList words={wordEntries} />
     </div>
   );
 }
