@@ -1,0 +1,20 @@
+.word-list {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .word-list h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .word-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .word-list li {
+    margin: 5px 0;
+  }
+  
